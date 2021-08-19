@@ -16,9 +16,9 @@ jobs:
           path: build-output.txt
         if: always()
 
-
   test:
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: download the file from previous job
         uses: actions/download-artifact@v2
